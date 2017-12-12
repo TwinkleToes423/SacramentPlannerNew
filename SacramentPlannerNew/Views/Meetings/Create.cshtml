@@ -62,6 +62,25 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+<script>
+   // Replace current Conductor Input tag with Conductor Select
+   var e = document.getElementsByName("Conductor")[0];
+   var d = document.createElement("select");
+   d.innerHTML = e.innerHTML;
+
+   e.parentNode.replaceChild(d, e);
+
+   //Populat Select
+   var option1 = document.createElement("option");
+   option1.value = option1.text = "Bishop Jimmy Paige";
+   var option2 = document.createElement("option");
+   option2.value = option1.text = "1st Counselor Jimmy Hendrix";
+   var option3 = document.createElement("option");
+   option3.value = option1.text = "2nd Counselor Axel Rose";
+   d.add(option1);
+   d.add(option2);
+   d.add(option3);
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
