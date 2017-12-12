@@ -13,7 +13,6 @@ namespace SacramentPlannerNew.Controllers
     {
         private readonly SacramentPlannerNewContext _context;
 
-
         public MeetingsController(SacramentPlannerNewContext context)
         {
             _context = context;
