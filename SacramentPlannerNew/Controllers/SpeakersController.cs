@@ -60,7 +60,7 @@ namespace SacramentPlannerNew.Controllers
         {
             if (ModelState.IsValid)
             {
-                speakers.MeetingId =(int)RouteData.Values["id"];
+                speakers.MeetingId = Convert.ToInt32(RouteData.Values["id"]);
                 _context.Add(speakers);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
