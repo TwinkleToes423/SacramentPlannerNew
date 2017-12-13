@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a href="/meetings">Go Back</a>
 </p>
 <table class="table">
     <thead>
@@ -29,11 +29,6 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-   // Skip any speaker that is NOT in this meeting
-   if (item.MeetingId != 3)
-   {
-      continue;
-   }
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.FirstName)

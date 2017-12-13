@@ -25,8 +25,21 @@ namespace SacramentPlannerNew.Controllers
             return View(await sacramentPlannerNewContext.ToListAsync());
         }
 
-        // GET: Speakers/Details/5
-        public async Task<IActionResult> Details(int? id)
+         // GET: Speakers
+         public async Task<IActionResult> Show(int id)
+         {
+            var sacramentPlannerNewContext = _context.Speakers.Include(s => s.Meeting);
+         var list = await sacramentPlannerNewContext.ToListAsync();
+         for (int i = 0; i < list.Count; i++)
+         {
+            if (list[i].MeetingId != id)
+               list.Remove(list[i]);
+         }
+            return View(list);
+         }
+
+      // GET: Speakers/Details/5
+      public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {

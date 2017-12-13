@@ -24,6 +24,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.SacramentHymn)
                 </th>
+               <th>
+                  @Html.DisplayNameFor(model => model.Speakers)
+               </th>
                 <th>
                     @Html.DisplayNameFor(model => model.IntermediateHymn)
                 </th>
@@ -54,6 +57,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SacramentHymn)
             </td>
+           <td>
+              <a class="btn btn-default" href="/Speakers/Show/@item.MeetingId">View Speakers</a>
+           </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IntermediateHymn)
             </td>
