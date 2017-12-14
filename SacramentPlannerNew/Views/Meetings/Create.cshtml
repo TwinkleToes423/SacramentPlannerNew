@@ -69,6 +69,10 @@
    d.innerHTML = e.innerHTML;
 
    e.parentNode.replaceChild(d, e);
+   var sel = document.getElementsByTagName("select")[0];
+   sel.className = "form-control";
+   sel.id = "Conductor";
+   sel.name = "Conductor";
 
    //Populat Select
    var option1 = document.createElement("option");
