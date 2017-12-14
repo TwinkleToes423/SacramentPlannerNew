@@ -57,6 +57,7 @@ namespace SacramentPlannerNew.Controllers
         {
             if (ModelState.IsValid)
             {
+                meeting.MeetingId = Convert.ToInt32(RouteData.Values["id"]);
                 _context.Add(meeting);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Create", "Speakers", new { id = meeting.MeetingId});

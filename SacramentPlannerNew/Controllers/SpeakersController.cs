@@ -76,7 +76,7 @@ namespace SacramentPlannerNew.Controllers
                 speakers.MeetingId = Convert.ToInt32(RouteData.Values["id"]);
                 _context.Add(speakers);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Meetings", new { id = speakers.MeetingId});
             }
             ViewData["MeetingId"] = new SelectList(_context.Meeting, "MeetingId", "ClosingPrayer", speakers.MeetingId);
             return View(speakers);
@@ -162,7 +162,7 @@ namespace SacramentPlannerNew.Controllers
             var speakers = await _context.Speakers.SingleOrDefaultAsync(m => m.SpeakerId == id);
             _context.Speakers.Remove(speakers);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Meetings", new { id = speakers.MeetingId});
         }
 
         private bool SpeakersExists(int id)
